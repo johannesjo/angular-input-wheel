@@ -4,10 +4,16 @@ angular.module('angularInputWheel')
         'use strict';
 
         return {
+            replace: true,
             restrict: 'EA',
-            scope: false,
-            compile: function (el)
+            scope: {
+                ngModel: '='
+            },
+            templateUrl: 'input-wheel-d.html',
+            transclude: true,
+            controller: function ($scope)
             {
+
             }
         };
     }]);

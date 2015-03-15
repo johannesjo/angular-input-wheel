@@ -1,4 +1,4 @@
-describe('example-directive', function ()
+describe('input-wheel-directive', function ()
 {
     'use strict';
 

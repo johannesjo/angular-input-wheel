@@ -1,12 +1,39 @@
-example {
-  border: 1px dashed #d1d1d1;
-  padding: 20px;
-  display: block;
-  margin-bottom: 10px; }
+.input-wheel {
+  display: table;
+  width: 100%;
+  table-layout: auto; }
 
-hljs {
-  margin-top: 30px;
-  display: block; }
+* {
+  box-sizing: border-box; }
 
-description {
-  margin-top: 10px; }
+.wheel {
+  background: #eee;
+  border: 1px solid #666;
+  color: #fff;
+  display: table-cell;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 200px; }
+  .wheel .numbers-wrapper {
+    border: 1px solid blue;
+    background: #ccc;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 100px;
+    vertical-align: middle; }
+  .wheel .numbers-inner {
+    border: 1px solid orange;
+    overflow: hidden;
+    height: auto; }
+  .wheel .number {
+    top: 0;
+    height: 100px;
+    display: block;
+    vertical-align: middle;
+    border: 1px solid yellow;
+    background: #444;
+    box-shadow: inset 1px 1px 1px #000; }

@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+.wheel {
+    background: #eee;
+    border:     1px solid #666;
+    color:      #fff;
+    display:    table-cell;
+    text-align: center;
+    position:   relative;
+    padding:    0;
+    margin:     0;
+    overflow:   hidden;
+    width:      200px;
+    .numbers-wrapper {
+        border:         1px solid blue;
+        background:     #ccc;
+        position:       relative;
+        overflow:       hidden;
+        display:        block;
+        height:         100px;
+        vertical-align: middle;
+    }
+    .numbers-inner {
+        border:   1px solid orange;
+        overflow: hidden;
+        height:   auto;
+//        transition: all 0.1s linear;
+    }
+    .number {
+        //        -webkit-transform-style: preserve-3d;
+        //        transform:               rotateX(-30deg);
+        //        -webkit-transform:       rotateX(-30deg);
+        top:            0;
+        height:         100px;
+        display:        block;
+        vertical-align: middle;
+        border:         1px solid yellow;
+        background:     #444;
+        box-shadow:     inset 1px 1px 1px #000;
+
+    }
+}
+
