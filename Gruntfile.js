@@ -419,7 +419,7 @@ module.exports = function (grunt)
                         // bower:js
                         'bower_components/angular/angular.js',
                         'bower_components/hammerjs/hammer.js',
-                        'bower_components/ryanmullins-angular-hammer/angular.hammer.js',
+                        'bower_components/angular-gestures/gestures.min.js',
                         'bower_components/angular-animate/angular-animate.js',
                         'bower_components/angular-mocks/angular-mocks.js',
                         // endbower

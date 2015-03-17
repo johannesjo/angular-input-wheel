@@ -4,18 +4,16 @@ angular.module('exampleApp', [
 ])
     .controller('exampleCtrl', function ($scope)
     {
-        $scope.testTap = function ()
+        $scope.type = '--';
+        $scope.handleGesture = function ($event)
         {
-            console.log('I am here!');
+            console.log('button event', $event);
+            $scope.type = $event.type;
+            $event.srcEvent.stopPropagation();
         };
-
-        $scope.testTouch = function ()
+        $scope.handleParentGesture = function ($event)
         {
-            console.log('TOUCH');
-        };
-
-        $scope.testHold = function ()
-        {
-            console.log('HOLD');
+            console.log('parent event', $event);
+            $scope.type = $event.type;
         };
     });

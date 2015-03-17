@@ -1,7 +1,6 @@
 .input-wheel {
-  display: table;
-  width: 100%;
-  table-layout: auto; }
+  display: block;
+  width: 100%; }
 
 * {
   box-sizing: border-box; }
@@ -10,19 +9,22 @@
   background: #eee;
   border: 1px solid pink;
   color: #fff;
-  display: table-cell;
+  display: block;
   text-align: center;
   position: relative;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  width: 200px; }
+  width: 100px;
+  height: 100px;
+  float: left; }
   .wheel .numbers-wrapper {
     border: 1px solid blue;
     background: #ccc;
     position: relative;
     overflow: hidden;
     display: block;
+    width: 100px;
     height: 100px;
     vertical-align: middle; }
   .wheel .numbers-inner {
@@ -36,4 +38,5 @@
     vertical-align: middle;
     border: 1px solid yellow;
     background: #444;
+    background: green;
     box-shadow: inset 1px 1px 1px #000; }

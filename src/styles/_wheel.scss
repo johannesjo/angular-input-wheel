@@ -6,19 +6,22 @@
     background: #eee;
     border:     1px solid pink;
     color:      #fff;
-    display:    table-cell;
+    display:    block;
     text-align: center;
     position:   relative;
     padding:    0;
     margin:     0;
     overflow:   hidden;
-    width:      200px;
+    width:      100px;
+    height:     100px;
+    float:      left;
     .numbers-wrapper {
         border:         1px solid blue;
         background:     #ccc;
         position:       relative;
         overflow:       hidden;
         display:        block;
+        width:          100px;
         height:         100px;
         vertical-align: middle;
     }
@@ -26,7 +29,7 @@
         border:   1px solid orange;
         overflow: hidden;
         height:   auto;
-//        transition: all 0.1s linear;
+        //        transition: all 0.1s linear;
     }
     .number {
         //        -webkit-transform-style: preserve-3d;
@@ -38,8 +41,18 @@
         vertical-align: middle;
         border:         1px solid yellow;
         background:     #444;
+        background: green;
         box-shadow:     inset 1px 1px 1px #000;
-
+//        &.active {
+//            display: block;
+//        }
+//        &.next {
+//            display: block;
+//        }
+//        &.previous {
+//            display: block;
+//        }
     }
+
 }
 

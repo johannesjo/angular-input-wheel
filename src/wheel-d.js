@@ -11,65 +11,44 @@ angular.module('angularInputWheel')
             templateUrl: 'wheel-d.html',
             link: function (scope, el, attrs, inputWheelCtrl)
             {
+                var total = inputWheelCtrl.ngModel,
+                    wheelHeight;
+                scope.displayedValues = [{val: -1}, {val: 0}, {val: 1}];
+                scope.value = scope.displayedValues[1];
 
-                var total = inputWheelCtrl.ngModel;
+                wheelHeight = el[0].offsetHeight;
+                scope.top = wheelHeight * -1;
+                var myFac = 0;
 
-                scope.max = 9;
-                scope.min = 0;
-                scope.value = 0;
-                scope.step = 0.1;
-                scope.drag = function ($event)
+                scope.panStart = function ($event)
                 {
-                    console.log($event);
+                    // get current height and set start top
+                    wheelHeight = el[0].offsetHeight;
+                    scope.startTop = scope.top + (myFac * -1 * wheelHeight);
                 };
-
-                //$swipe.bind(el, {
-                //    'start': function (coords)
-                //    {
-                //        scope.startValue = parseFloat(scope.value);
-                //        scope.startY = coords.y;
-                //        console.log('START');
-                //
-                //    },
-                //    'move': function (coords)
-                //    {
-                //        var delta = coords.y - scope.startY;
-                //
-                //        var computedValue = Math.round((scope.startValue + (delta * scope.step)) * 10000) / 10000;
-                //
-                //        if (computedValue > scope.max) {
-                //            computedValue = scope.max;
-                //        }
-                //        if (computedValue < scope.min) {
-                //            computedValue = scope.min;
-                //        }
-                //        scope.value = computedValue;
-                //        //scope.$apply();
-                //        //console.log(scope.value);
-                //    },
-                //    'end': function (coords)
-                //    {
-                //        console.log('END');
-                //        scope.value = parseInt(scope.value);
-                //    },
-                //    'cancel': function (coords)
-                //    {
-                //        console.log('CANCEL');
-                //
-                //    }
-                //});
-
-
-                scope.getClass = function (index)
+                scope.panEnd = function ($event)
                 {
-                    if (scope.value === index) {
-                        return 'active';
-                    } else if (scope.value === index + 1) {
-                        return 'next';
-                    } else if (scope.value === index - 1) {
-                        return 'previous';
+                    console.log('END');
+                };
+                scope.panUp = move;
+                scope.panDown = move;
+
+                function move($event)
+                {
+                    scope.top = $event.deltaY + scope.startTop + (myFac * wheelHeight);
+                    if (scope.top * -1 > wheelHeight) {
+                        myFac++;
+                        calcScopeFactor(myFac)
+                    } else if (scope.top > 0) {
+                        myFac--;
+                        calcScopeFactor(myFac)
                     }
-                };
+                }
+
+                function calcScopeFactor(myFac)
+                {
+                    scope.factor = myFac;
+                }
             }
         };
     }]);
