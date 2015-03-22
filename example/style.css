@@ -14,7 +14,6 @@
   position: relative;
   padding: 0;
   margin: 0;
-  overflow: hidden;
   width: 100px;
   height: 100px;
   float: left; }
@@ -25,7 +24,7 @@
     overflow: hidden;
     display: block;
     width: 100px;
-    height: 100px;
+    height: 300px;
     vertical-align: middle; }
   .wheel .numbers-inner {
     border: 1px solid orange;
@@ -34,9 +33,17 @@
   .wheel .number {
     top: 0;
     height: 100px;
+    line-height: 100px;
     display: block;
     vertical-align: middle;
     border: 1px solid yellow;
     background: #444;
     background: green;
     box-shadow: inset 1px 1px 1px #000; }
+  .wheel .real-value {
+    position: absolute;
+    top: 100%;
+    background: red;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700; }
