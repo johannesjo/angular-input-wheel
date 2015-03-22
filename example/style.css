@@ -26,7 +26,7 @@
     width: 100px;
     height: 300px;
     vertical-align: middle; }
-  .wheel .numbers-inner {
+  .wheel .numbers-wrapper-inner {
     border: 1px solid orange;
     overflow: hidden;
     height: auto; }
@@ -37,12 +37,11 @@
     display: block;
     vertical-align: middle;
     border: 1px solid yellow;
-    background: #444;
     background: green;
     box-shadow: inset 1px 1px 1px #000; }
   .wheel .real-value {
     position: absolute;
-    top: 100%;
+    bottom: 0;
     background: red;
     color: #fff;
     font-size: 20px;
